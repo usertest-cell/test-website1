@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advocate Suman Gupta | Legal Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: #fbbf24;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #fbbf24;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #fbbf24;
+            color: #1e3a8a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: #fbbf24;
+            color: #1e3a8a;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .experience-badge h3 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        /* Practice Areas */
+        .practice-areas {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .practice-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .practice-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .practice-card i {
+            font-size: 3rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .client-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 100px 0;
+            background: #1e3a8a;
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #fbbf24;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .contact-form h3 {
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #fbbf24;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #1e3a8a;
+                flex-direction: column;
+                padding: 2rem;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .practice-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-balance-scale"></i>
+                <h1>Adv. Suman Gupta</h1>
+            </div>
+            <nav>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#practice">Practice Areas</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Your Trusted Legal Advisor</h2>
+                <p>Providing expert legal counsel and representation with integrity, professionalism, and dedication to justice</p>
+                <!--<a href="#contact" class="btn">Schedule Consultation</a> --->
+            </div>`
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://drive.google.com/uc?export=view&id=1J97r3svlwxGZI9eHzPeJVKe6RckLru0n" alt="Professional Indian lawyer in formal suit standing in modern law office with bookshelves and legal documents">
+            <!--    <div class="experience-badge">
+                        <h3>15+</h3>
+                        <p>Years Experience</p>
+                    </div> --->
+                </div>
+                <div class="about-text">
+                    <h2>About Advocate Suman Gupta</h2>
+                    <p>I am an Advocate and an expert in bankruptcy and corporate law. I have been dealing with matters at the Bombay High Court for years. I can draft various kinds of legal documents from pre-trial to post-trial proceedings.</p>
+                    <p>Individually I have experience dealing with clients in managing Contracts, Agreements and drafting significant clauses.</p>
+                    <p>Member of the Bar Council of India and practicing in the Supreme Court of India and various High Courts across the country.</p> <br>
+                    <a href="#contact" class="btn">contact us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas -->
+    <section id="practice" class="practice-areas">
+        <div class="container">
+            <div class="section-title">
+                <h2>Practice Areas</h2>
+                <p>Comprehensive legal services across various domains</p>
+            </div>
+            <div class="practice-grid">
+                <div class="practice-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Criminal Law</h3>
+                    <p>Expert defense and representation in criminal cases including bail applications, appeals, and trial proceedings.</p>
+                </div>
+                <div class="practice-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Property Law</h3>
+                    <p>Handling property disputes, title verification, land acquisition, and real estate transactions.</p>
+                </div>
+                <div class="practice-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Civil Litigation</h3>
+                    <p>Resolution of civil disputes including contract matters, torts, and civil rights cases.</p>
+                </div>
+                <div class="practice-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Family Law</h3>
+                    <p>Divorce, child custody, maintenance, and domestic violence cases with sensitivity and care.</p>
+                </div>
+                <div class="practice-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Corporate Law</h3>
+                    <p>Legal advisory for businesses, contract drafting, compliance, and corporate governance.</p>
+                </div>
+                <div class="practice-card">
+                    <i class="fas fa-scale-balanced"></i>
+                    <h3>Constitutional Law</h3>
+                    <p>Protection of fundamental rights and handling constitutional matters in higher judiciary.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about our legal services</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"I wanted to express my gratitude for your excellent work in drafting replies to my issue. Your expertise and effort helped resolve everything amicably. Thank you..."</p> <br>
+                        <span style="color: yellow;">&#9733;</span>
+						<span style="color: yellow;">&#9733;</span>
+						<span style="color: yellow;">&#9733;</span>
+						<span style="color: yellow;">&#9733;</span>
+						<span style="color: yellow;">&#9733;</span>
+						<p>Upwork Client</p>
+					</div>
+                 <!---  < div class="client-info">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fb63e915-f390-4ec1-8151-e9e37c0d7f37.png" alt="Portrait of satisfied male client in business attire" class="client-image">
+                        <div>
+                            <h4>Ravi Sharma</h4>
+                            <p>Business Owner</p>
+                        </div>
+                    </div>--->
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Need legal research</p><br>
+						<p>She does excellent work. I would highly recommend her."</p> <br>
+						<span style="color: yellow;">&#9733;</span>
+						<span style="color: yellow;">&#9733;</span>
+						<span style="color: yellow;">&#9733;</span>
+						<span style="color: yellow;">&#9733;</span>
+						<span style="color: yellow;">&#9733;</span>
+                    </div>
+                <!---    <div class="client-info">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ee374d87-78fb-4708-b7d6-573c810fa7e7.png" alt="Portrait of satisfied female client in professional setting" class="client-image">
+                        <div>
+                            <h4>Priya Singh</h4>
+                            <p>Software Engineer</p>
+                        </div>
+                    </div> --->
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"International law and environmental policy write </p>
+						<p>Excellent experience. Will hire again."</p> <br>
+						<span style="color: yellow;">&#9733;</span>
+						<span style="color: yellow;">&#9733;</span>
+						<span style="color: yellow;">&#9733;</span>
+						<span style="color: yellow;">&#9733;</span>
+						<span style="color: yellow;">&#9733;</span>
+                    </div>
+                <!---   <div class="client-info">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e68b5202-33d8-4799-b55f-96b5091a4b4f.png" alt="Portrait of young entrepreneur client smiling confidently" class="client-image">
+                        <div>
+                            <h4>Arjun Mehta</h4>
+                            <p>Startup Founder</p>
+                        </div>
+                    </div> --->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>Schedule a consultation to discuss your legal needs and find the best solution for your situation.</p>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Office Address</h4>
+                            <p>43, Savera Society, Veera Desai Road<br>Mumbai, Mumbai 400053</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>+91 81697 26433</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>guptasuman8012@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday: 9:30 AM - 6:30 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            <!--    <div class="contact-form">
+                    <h3>Schedule a Consultation</h3>
+                    <form id="consultationForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Practice Area</option>
+                                <option value="criminal">Criminal Law</option>
+                                <option value="property">Property Law</option>
+                                <option value="civil">Civil Litigation</option>
+                                <option value="family">Family Law</option>
+                                <option value="corporate">Corporate Law</option>
+                                <option value="constitutional">Constitutional Law</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Brief about your case" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit Request</button>
+                    </form>
+                </div> --->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1DaLczWY9D/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.threads.com/@adv.sumangupta?xmt=AQF0KHbJ_D7jQY9C-FCGDkR-BhNqrlp44Anx971_rnqN-Fo"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/advocate-suman-gupta-429915211?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/adv.sumangupta?igsh=anJubW91N2Z1ZHc="><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>© 2024 Advocate Suman Gupta. All rights reserved.</p>
+            <p>Member of Bar Council of India | Supreme Court of India</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('nav ul');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                navMenu.classList.remove('show');
+            });
+        });
+
+        // Form Submission
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your consultation request. We will contact you shortly.');
+            this.reset();
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+    </script>
+</body>
+</html>
+
